@@ -1,0 +1,94 @@
+import java.util.Scanner;
+public class ZealDemo{
+   public static void main(String[] args){
+      Scanner scan = new Scanner(System.in);
+	   System.out.println("Hello world! And hello Zeal!");
+      System.out.println("Sorry to have you had to compile so many java files to get here.");
+      System.out.println("Press enter when the program pauses to continue.");
+      scan.nextLine();
+      System.out.println("This project was originally made to be a backend library.");
+      System.out.println("Mostly I just wanted to be able to actually implement the algorithms I was learning.");
+      System.out.println("Because of that, this project isn't very showy, but I still think it shows some solid object oriented programming.");
+      System.out.println("I suppose that's up to you to decide though. =)");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Let's begin by taking a look at the foundation of the project: the Complex class.");
+      System.out.println("Complex.java is a class to handle arithmetic with complex numbers (i.e. numbers from the complex plane).");
+      System.out.println("For example, with the complex numbers A and B:");
+      System.out.println("");
+      Complex A = new Complex(1,1);
+      Complex B = new Complex(-1,2);
+      System.out.println("A: " + A.toString());
+      System.out.println("B: " + B.toString());
+      System.out.println("");
+      scan.nextLine();
+      System.out.println("We can perform all of the standard arithemetic operations:");
+      System.out.println("A + B = " + A.add(B).toString());
+      System.out.println("A - B = " + A.sub(B).toString());
+      System.out.println("A * B = " + A.mult(B).toString());
+      System.out.println("A / B = " + A.divideBy(B).toString());
+		System.out.println("");
+      System.out.println("Oh dear... that division doesn't look very clean with that rounding error.");
+      scan.nextLine();
+      System.out.println("Let's try again with the toStringR() method, that rounds to 4 decimal places.");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("A / B = " + A.divideBy(B).toStringR());
+      System.out.println("");
+      System.out.println("Much better.");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("I don't expect your clients have much need for a complex number calculator...");
+      scan.nextLine();
+      System.out.println("But I hope that this code demonstrates that I can abstract complicated concepts and implement them in code.");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("The StringStack class (integral to the parseComplex method of the Comlpex class) is a good example of my ");
+      System.out.println("ability to appropriately implement and use a stack structure.");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("It can turn a string like this:");
+      System.out.println("");
+      System.out.println("[[1,2i,1,1][2,7-i,0,3][1,-i,6,4][-1,2i,4,-2]]");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("Into a matrix on which we can do matrix algebra.");
+      System.out.println("");
+      ComplexMatrix X = ComplexMatrix.parseMatrix("[[1,2i,1,1][2,7-i,0,3][1,-i,6,4][-1,2i,4,-2]]");
+      System.out.println(X.toString());
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("Ultimately this project's purpose, was to have a tool to calculate eigenvalues and eigenvectors for matirices");
+      System.out.println("in a fraction of a second.");
+      System.out.println("");
+      Eigen E = new Eigen(X);
+      System.out.println(E.toString());
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("I know looking at pages and pages of numbers isn't very exciting to most people...");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("But considering that online search engines (including Google, Bing, and Yahoo) are based off of ");
+      System.out.println("math like this...");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("I think it's pretty cool.");
+      System.out.println("");
+      scan.nextLine();
+      System.out.println("");
+      System.out.println("This concludes the demonstration. If you'd like to pick through some of my code, I'd suggest looking at the");
+      System.out.println("classes StringNode, StringStack and the parseComplex method of the Complex class. The files with the words");
+      System.out.println("tester, or example aren't finished products. They were used for various demonstrations and testing. The");
+      System.out.println("EigenTester program, for example, was used to test my algorithm's speed.");
+      System.out.println("");
+      System.out.println("Thanks for taking the time. =)");
+      scan.nextLine();
+	}
+   private static void waitForUser(){
+      try{
+         System.in.read();
+      }catch (Exception e){}
+   }
+}
